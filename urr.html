@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	
+// Первая
+// let userInput = prompt("Введите занчение через запаятую");
+// let userArr = userInput.split(",");
+// userArr = userArr.map(Number);
+
+// let resultArray =sort(userArr);
+// document.write(resultArray.join(","));
+
+
+// function sort(array) {
+// 	let sorted;
+// 	do{
+// 		sorted = true;
+// 		for(let i=1;i<array.length;i++){
+// 			if (array[i]<array[i-1]) {
+// 				let tmp = array[i-1];
+// 				array[i-1]=array[i];
+// 				array[i]=tmp;
+// 				sorted=false;
+// 			}
+// 		}
+// 	}
+// 	while(!sorted);
+// 	return array;
+// }
+
+
+
+
+let userWords = prompt("Введите слова");
+
+document.write(shifr(userWords));
+
+function isLowerCase(str) {
+	if(str ===str.toLowerCase()) return true;
+	else return false;
+}
+
+function shifr(str) {
+	const alphavit = ["А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ъ","Ы","Ь","Э","Ю","Я"] ; 
+	let result="";
+	let i;
+	let upperCase;
+	for(x of str){
+		//document.write(x + " ");
+		upperCase =isLowerCase(x);
+		x=x.toUpperCase();
+		i =alphavit.indexOf(x);
+		if(i<0) result += x;
+		else{
+            
+			if (i==alphavit.length - 1) i=0;
+			else i++;
+			result += upperCase ? alphavit[i].toLowerCase() : alphavit[i];
+
+		}
+	}
+	return result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
